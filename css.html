@@ -57,8 +57,9 @@
          color:#fff;
         }
 
-        #top aside > input:hover {
-            color:white;
+        #top aside > input[type=checkbox]:hover + label {
+            transform:rotateZ(90deg);
+            text-shadow: rgb(255, 251, 0) 1px 0 10px;
         }
 
         #top aside input {
@@ -72,7 +73,14 @@
         }
 
         #top aside > input[type=checkbox]:checked + label + #menu {
+            animation: xiaomi 700ms forwards;
+            opacity: 1;
             display:block;
+
+        } 
+
+        #top aside > input[type=checkbox] + label + #menu {
+            animation: hiaodimi 400ms ease;
         } 
 
         #menu > nav > ul > li {
@@ -86,12 +94,12 @@
         #menu {
             position:absolute;
             width:30%;
+            opacity: 0;
+            display:none;
             right:-30%;
             height:calc(100% - 3px);
             background-color:#d3d3d3;
             border-left:1px solid #b2b2b2;
-            animation: xiaomi 400ms forwards;
-            display:none;
             margin-top:calc(-1.5rem + 2px)
         }
 
@@ -113,6 +121,17 @@
             to {
                 background-color:crimson;
                 right:0;
+            }
+        }
+
+        @keyframes hiaodimi {
+            from {
+                background-color:crimson;
+                right:0;
+            }
+            to {
+                background-color:#fff;
+                right:-30%;
             }
         }
     </style>
