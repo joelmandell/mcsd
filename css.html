@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS-n00ben</title>
+    <style type="text/css">
+        body {
+            margin:0;
+            border-top:3px solid lightblue;
+        }
+
+        main {
+            border-top:1px solid #b3b3b3;
+        }
+
+        #top {
+            width:100%;
+            height:40px;
+            background-color:antiquewhite;
+            border-bottom:1px solid #d3d3d3;
+        }
+
+        #top aside {
+            float:right;
+        }
+
+        #top aside > input[type=checkbox] + label::before {
+            content:"__\A__\A__";
+            z-index:50;
+            margin-right:0.9rem;
+            margin-top:0.2rem;
+            white-space:pre;
+            line-height:5px;
+            position:relative;
+            display:block;
+            font-weight:bolder;
+        }
+
+        #top aside > input[type=checkbox]:checked + label::before {
+            content:"X";
+            z-index:50;
+            font-family:Arial, Helvetica, sans-serif;
+            margin-right:0.95em;
+            font-size:110%;
+            margin-top:1rem;
+            white-space:pre;
+            line-height:5px;
+            position:relative;
+            display:block;
+            font-weight:bolder;
+            font-stretch:condensed;
+        }
+
+        #top aside > input[type=checkbox]:checked:hover + label {
+         color:#fff;
+        }
+
+        #top aside > input:hover {
+            color:white;
+        }
+
+        #top aside input {
+            z-index: 51;
+            margin-top:13px;
+            right:2px;
+            position: absolute;
+            opacity: 0;
+            width:35px;
+            height:20px;
+        }
+
+        #top aside > input[type=checkbox]:checked + label + #menu {
+            display:block;
+        } 
+
+        #menu > nav > ul > li {
+            list-style: none;
+            color:#fff;
+            margin:0;
+            width:100%;
+            text-shadow:#b2b2b2;
+        }
+
+        #menu {
+            position:absolute;
+            width:30%;
+            right:-30%;
+            height:calc(100% - 3px);
+            background-color:#d3d3d3;
+            border-left:1px solid #b2b2b2;
+            animation: xiaomi 400ms forwards;
+            display:none;
+            margin-top:calc(-1.5rem + 2px)
+        }
+
+        #top aside:first-child {
+            float:left;
+            clear:both;
+            position: relative;
+            margin-top:-0.5rem;
+        }
+
+        #top aside:first-child h1 {
+            padding:0.1rem;
+        }
+
+        @keyframes xiaomi {
+            from {
+                background-color:#fff;
+            }
+            to {
+                background-color:crimson;
+                right:0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="top">
+            <aside>
+                <h1>MCSD CSS TESTBENCH</h1>
+            </aside>
+            <aside>
+                <input type="checkbox" />
+                <label></label>
+                <section id="menu">
+                        <nav>
+                            <ul>
+                                <li>Start</li>
+                                <li>Profil</li>
+                            </ul>
+                        </nav>
+                    </section>
+            </aside>
+        </section>
+        <section>
+            <h1>YOLO</h1>
+        </section>
+    </main>
+</body>
+</html>
